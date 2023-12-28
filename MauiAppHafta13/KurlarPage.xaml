@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHafta13.KurlarPage"
+             Title="Güncel Kurlar" Appearing="KurlariGuncelle">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh"    Order="Primary" IconImageSource="refresh.png" Clicked="KurlariGuncelle"/>
+    </ContentPage.ToolbarItems>
+
+    <RefreshView Refreshing="KurlariGuncelle" x:Name="refreshView">
+
+        <ListView x:Name="lstKurlar" SelectionMode="Single" >
+            <ListView.Header>
+                <Grid ColumnDefinitions="*,*,*">
+                    <Label  Grid.Column="0" Text="İsim"  FontAttributes="Bold"/>
+                    <Label  Grid.Column="1" Text="Alış Fiyatı" FontAttributes="Bold"/>
+                    <Label  Grid.Column="2" Text="Satış Fiyatı" FontAttributes="Bold"/>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid ColumnDefinitions="*,*,*">
+                            <Label  Grid.Column="0" Text="{Binding Isim}"/>
+                            <Label  Grid.Column="1" Text="{Binding ForexBuying}"/>
+                            <Label  Grid.Column="2" Text="{Binding ForexSelling}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </RefreshView>
+
+</ContentPage>

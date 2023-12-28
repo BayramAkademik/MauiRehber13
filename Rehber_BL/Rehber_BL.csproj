@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Rehber_DL\Rehber_DL.csproj" />
+    <ProjectReference Include="..\Rehber_EL\Rehber_EL.csproj" />
+  </ItemGroup>
+
+</Project>
